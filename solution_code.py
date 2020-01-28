@@ -12,7 +12,7 @@ import pandas as pd
 # TASK 1
 # Calculate how many emails were sent from each sender address to each recipient.
 
-path=r'C:\maildir\*\sent\*'
+path=r'maildir\*\sent\*'
 files = glob.glob(path)
 df=pd.DataFrame(columns=['sender','recipient'],index=range(len(files)*5))#initialize dataframe
 xstr = lambda s: '' if s is None else s #useful function
@@ -52,7 +52,7 @@ ans.sort_values('count',ascending=False).reset_index().loc[:,['sender','recipien
 # TASK 2
 # Calculate the average number of emails received per day per employee per day of week
 
-path=r'C:\maildir\*\inbox\[0-99999]_'
+path=r'maildir\*\inbox\[0-99999]_'
 files = glob.glob(path)
 df2=pd.DataFrame(columns=['employee','d'],index=range(len(files)*5))#initialize dataframe
 i=0
